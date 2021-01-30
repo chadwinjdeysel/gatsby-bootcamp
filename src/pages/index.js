@@ -16,11 +16,6 @@ const IndexPage = () => {
         I'm Chadwin, a full stack developer living in the dry Vaal Triangle
       </h2>
 
-      <p>
-        need a developer? 
-        
-        <Link to="/contact">let's get in touch</Link>
-      </p>
     </Layout>
   )
 }
