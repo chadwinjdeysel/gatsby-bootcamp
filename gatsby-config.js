@@ -10,6 +10,15 @@ module.exports = {
     author: 'Chadwin Deysel'
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-datocms',
+      options: {
+        apiToken: process.env.DATO_TOKEN,
+        environment: `main`,
+        preview: false,
+        disableLiveReload: false,        
+      }
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',

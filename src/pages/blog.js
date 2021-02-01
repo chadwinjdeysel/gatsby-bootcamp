@@ -9,17 +9,12 @@ import Head from '../components/head'
 const BlogPage = () => {
     const data = useStaticQuery(graphql`
         query {
-            allContentfulBlogPost(
-                sort: {
-                    fields: publishedDate,
-                    order: DESC
-                }
-            ){
-                edges{
-                    node{
-                        title
+            allDatoCmsArticle {
+                edges {
+                    node {
+                        name
                         slug
-                        publishedDate (fromNow: true)
+                        publishedDate
                     }
                 }
             }
@@ -33,12 +28,12 @@ const BlogPage = () => {
             <h1>Latest Blogs</h1>
 
             <ol className={ blogStyles.posts }>
-                {data.allContentfulBlogPost.edges.map((edge) => {
+                {data.allDatoCmsArticle.edges.map((edge) => {
                     return (
                         <li className={blogStyles.post}>
                             <Link to={edge.node.slug}>
 
-                                <h2>{edge.node.title}</h2>
+                                <h2>{edge.node.name}</h2>
 
                                 <p>{edge.node.publishedDate}</p>
                             </Link>
