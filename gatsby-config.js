@@ -14,7 +14,7 @@ module.exports = {
       resolve: 'gatsby-source-datocms',
       options: {
         apiToken: process.env.DATO_TOKEN,
-        environment: `main`,
+        environment: 'main',
         preview: false,
         disableLiveReload: false,        
       }
@@ -40,14 +40,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-relative-images',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
+          
         ]
       } 
     }
